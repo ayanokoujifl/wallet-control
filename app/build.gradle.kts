@@ -53,6 +53,7 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation("androidx.compose.material:material-icons-extended")
     // https://mvnrepository.com/artifact/org.mindrot.bcrypt/bcrypt
     implementation("org.mindrot:jbcrypt:0.4")
     // Room
