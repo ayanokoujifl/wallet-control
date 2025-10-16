@@ -4,8 +4,6 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.background
-import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -20,7 +18,8 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
-import com.ayanokoujifl.walletcontrol.ui.Header
+import com.ayanokoujifl.walletcontrol.ui.components.Header
+import com.ayanokoujifl.walletcontrol.ui.routes.App
 import com.ayanokoujifl.walletcontrol.ui.theme.WalletControlTheme
 
 class MainActivity : ComponentActivity() {
@@ -40,7 +39,7 @@ class MainActivity : ComponentActivity() {
                         .fillMaxSize(),
                     containerColor = MaterialTheme.colorScheme.background,
                 ) { innerPadding ->
-                    Header(modifier = Modifier.padding(innerPadding),isDark, { setIsDark() })
+                    App(modifier=Modifier.padding(innerPadding))
                 }
             }
         }

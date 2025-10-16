@@ -58,6 +58,7 @@ dependencies {
     implementation("org.mindrot:jbcrypt:0.4")
     // Room
     implementation("androidx.room:room-runtime:2.8.0")
+    implementation(libs.androidx.navigation.compose)
     kapt("androidx.room:room-compiler:2.8.0")
     implementation(libs.androidx.room.ktx) // Extensões Kotlin + Coroutines
 
