@@ -10,15 +10,10 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
+import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
-import com.ayanokoujifl.walletcontrol.ui.components.Header
 import com.ayanokoujifl.walletcontrol.ui.routes.App
 import com.ayanokoujifl.walletcontrol.ui.theme.WalletControlTheme
 
@@ -30,8 +25,8 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             var isDark by remember { mutableStateOf(false) }
-            fun setIsDark(){
-                isDark=!isDark
+            fun setIsDark() {
+                isDark = !isDark
             }
             WalletControlTheme(isDark, dynamicColor = false) {
                 Scaffold(
@@ -39,7 +34,10 @@ class MainActivity : ComponentActivity() {
                         .fillMaxSize(),
                     containerColor = MaterialTheme.colorScheme.background,
                 ) { innerPadding ->
-                    App(modifier=Modifier.padding(innerPadding))
+                    App(
+                        modifier = Modifier.padding(innerPadding),
+                        isDarkTheme = isDark,
+                        setTheme = { setIsDark() })
                 }
             }
         }

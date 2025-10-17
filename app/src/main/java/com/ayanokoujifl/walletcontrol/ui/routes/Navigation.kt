@@ -9,14 +9,15 @@ import com.ayanokoujifl.walletcontrol.ui.screens.Home
 import com.ayanokoujifl.walletcontrol.ui.screens.Settings
 
 @Composable
-fun App(modifier: Modifier) {
+fun App(modifier: Modifier, isDarkTheme: Boolean, setTheme: () -> Unit) {
     val navController = rememberNavController()
+
     NavHost(navController = navController, startDestination = Screen.Home.route) {
         composable(route = Screen.Home.route) {
             Home(modifier, navController)
         }
         composable(route = Screen.Settings.route) {
-            Settings(modifier, navController)
+            Settings(modifier, navController, isDarkTheme, setTheme = setTheme)
         }
     }
 }
